@@ -1,0 +1,55 @@
+📌 Algorithm for Traveling Half-Square Pulse Simulation
+
+Initialize environment
+
+Clear workspace, close figures, reset command window.
+
+Define parameters
+
+Amplitude of pulse a
+
+Rope length L_rope
+
+Pulse width L_pulse
+
+Number of harmonics N (controls sharpness of square pulse approximation)
+
+Wave speed velocity
+
+Generate spatial and temporal grids
+
+x: equally spaced points along the rope
+
+t: discrete time steps for animation
+
+Define initial half-square pulse
+
+Use an anonymous function f0(x) that is nonzero only in the middle segment of the rope.
+
+Compute Fourier sine coefficients
+
+For each harmonic n = 1…N, integrate the product of f0(x) and sin(nπx/L_rope) over the rope length.
+
+Precompute spatial sine terms
+
+Store all sine functions for efficiency.
+
+Initialize plot
+
+Create figure with proper labels, title, and y-axis limits.
+
+Animation loop
+
+For each time step t(k):
+
+Compute angular frequencies ωn
+
+Multiply Fourier coefficients with cos(ωn t) (time evolution of standing waves)
+
+Reconstruct displacement y_total(x,t) as sum of all harmonics
+
+Update plot in real time.
+
+End simulation
+
+Result is a smooth traveling half-square pulse animation.
